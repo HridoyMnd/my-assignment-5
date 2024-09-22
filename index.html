@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Assignment-5</title>
+    <!-- google font cdn link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- lexend font -->
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <!-- daisy UI + tailwind css cdn link -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- tailwind css config code -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              btnBack: 'rgb(180, 244, 97)',
+              paraClr: 'rgba(17, 17, 17, 0.7)',
+              headingClr: 'rgb(17, 17, 17)',
+            },
+           fontFamily: {
+            bodyFont:["Lexend", 'sans-serif'],
+           }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="font-bodyFont">
+    <!-- header section markup -->
+    <header class="header-section">
+      <!-- navbar section -->
+      <div class="navbar-container bg-amber-50 pt-3 pb-10 mb-20">
+        <div class="navbar flex justify-between w-4/5 mx-auto">
+          <!-- navbar start -->
+          <div class="">
+            <button class=" btn bg-btnBack font-semibold text-xl px-8 hover:bg-btnBack">Blog</button>
+          </div>
+          
+          <!-- navbar center -->
+          <div class="flex gap-4 font-semibold text-xl">
+            <a><img src="assets/images/logo.png" class="max-w-10" alt=""></a>
+            <a class="text-xl">Donate Bangladesh</a>
+          </div>
+          
+          <!--navbar right-->
+          <div class="font-medium text-xl text-paraClr">
+           <span><img src="assets/images/coin.png" alt=""></span>
+           <h5 class="pl-2 pr-1">5500</h5>
+           <h4>BDT</h4>
+          </div>
+        </div>
+      </div>
+      <!-- donation button section markup -->
+       <div class="dontion-buttons flex justify-center gap-5">
+        <button class="btn bg-btnBack font-semibold text-xl hover:bg-btnBack text-headingClr"><a href="" class="px-4">Donation</a></button>
+        <button class="btn bg-inherit font-medium text-xl px-4 text-paraClr"><a href="">History</a></button>
+       </div>
+      
+    </header>
+    <!-- main section markup -->
+     <main class="main-section">
+
+     </main>
+    
+
+  
+    
+     
+
+    <!-- https://github.com/HridoyMnd/my-assignment-5 -->
+     <!-- https://hridoymnd.github.io/my-assignment-5/ -->
+      <button class="btn bg-btnBack"><a href="https://github.com/HridoyMnd/my-assignment-5">git link</a></button>
+      <button class="btn bg-btnBack"><a href="https://hridoymnd.github.io/my-assignment-5/"> live server</a></button>
+</body>
+</html>
