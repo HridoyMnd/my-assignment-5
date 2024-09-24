@@ -1,26 +1,62 @@
 
+// tailwind css config code 
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        btnBack: 'rgb(180, 244, 97)',
+        paraClr: 'rgba(17, 17, 17, 0.7)',
+        headingClr: 'rgb(17, 17, 17)',
+      },
+     fontFamily: {
+      bodyFont:["Lexend", 'sans-serif'],
+     }
+    }
+  }
+}
 
-let btn1 = document.getElementById('btn1');
-        let btn2 = document.getElementById('btn2');
-        let page1 = document.getElementById('page1');
-        let page2 = document.getElementById('page2');
+  //showpages and active buttons
+  const button1 = document.getElementById('btn1');
+  const button2 = document.getElementById('btn2');
+  const pageOne = document.getElementById('page1');
+  const pagetwo = document.getElementById('page2');
+  //pages show controls with function
+  button1.addEventListener('click', function(){
+      pageOne.classList.remove('hidden');
+      pagetwo.classList.add('hidden');
+      button1.classList.add('bg-btnBack');
+      button2.classList.remove('bg-btnBack');
+  })
+  button2.addEventListener('click', function(){
+      pagetwo.classList.remove('hidden');
+      pageOne.classList.add('hidden');
+      button2.classList.add('bg-btnBack');
+      button1.classList.remove('bg-btnBack');
+  })
+  //decrease from my avaiable amount
+  let myAmountElement = document.getElementById('my-amount');
+  let myIntAmount = parseFloat(myAmountElement.innerText);    
+  //control with donation button
+  const donateBtn = document.getElementById('donate-button');
+  //donated total amount
+  let donatedAmount = document.getElementById('donated-amount')
+  let donatedIntAmount = parseFloat(donatedAmount.innerText);
 
-        function activateButton(run, off) {
-          
-            run.classList.add("bg-lime-300", "text-white");
-            run.classList.remove("bg-red-300");
-    
-        
-            off.classList.add("bg-green-500");
-            off.classList.remove("bg-green-700");
-        }
-        btn1.addEventListener('click', function(){
-          page1.classList.remove('hidden');
-          page2.classList.add('hidden');
-          activateButton(run, off);
-        });
-        btn2.addEventListener('click', function(){
-          page1.classList.add('hidden');
-          page2.classList.remove('hidden');
-          activateButton(run, off);
-        })
+  // amount increase and decrease with function
+  donateBtn.addEventListener('click', function(){
+      //donation input value
+      const donateInput = document.getElementById('donate-input');
+      const donateValue = parseFloat(donateInput.value);
+
+      if (donateInput === "" || isNaN(donateValue) || donateValue < 0) {
+          alert('Invalid donation');
+      } else {
+          myIntAmount -= donateValue; 
+          myAmountElement.innerText = myIntAmount.toFixed(2);
+          donatedIntAmount += donateValue;
+          donatedAmount.innerText = donatedIntAmount;
+      }
+      donateInput.value = '';
+   
+  })
+  

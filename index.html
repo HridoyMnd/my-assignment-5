@@ -13,83 +13,82 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- tailwind css config code -->
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              btnBack: 'rgb(180, 244, 97)',
-              paraClr: 'rgba(17, 17, 17, 0.7)',
-              headingClr: 'rgb(17, 17, 17)',
-            },
-           fontFamily: {
-            bodyFont:["Lexend", 'sans-serif'],
-           }
-          }
-        }
-      }
-    </script>
 </head>
-<body class="font-bodyFont">
-    <!-- header section markup -->
-    <header class="header-section">
-      <!-- navbar section -->
-      <div class="navbar-container bg-amber-50 pt-3 pb-10 mb-20">
-        <div class="navbar flex justify-between w-10/12 mx-auto">
-          <!-- navbar start -->
-          <div class="">
-            <button class=" btn bg-btnBack font-semibold text-xl px-8 hover:bg-btnBack">Blog</button>
+    <!-- heading section markup -->
+    <header class="sticky top-0 z-10 backdrop-blur-lg ">
+      <!-- navbar section markup -->
+      <div class="bg-yellow-50 bg-opacity-50 p-4">
+        <div class="navbar justify-between w-10/12 mx-auto">
+          <!-- navbar left -->
+          <div class="left">
+          <a href="index2.html"><button class="btn bg-btnBack text-xl font-semibold hover:bg-btnBack sm:block hidden">Blog</button></a>
+            <span><a href="index2.html"><i class="fa-solid fa-bars sm:hidden block text-2xl font-bold"></i></a></span>
           </div>
-          
-          <!-- navbar center -->
-          <div class="flex gap-4 font-semibold text-xl">
-            <a><img src="assets/images/logo.png" class="max-w-10" alt=""></a>
-            <a class="text-xl">Donate Bangladesh</a>
+        
+          <div class="middle">
+            <a class=" flex gap-3">
+              <img src="assets/images/logo.png " class="max-w-[30px] hidden sm:block " alt="token">
+              <h3 class="text-base sm:text-xl font-semibold">Donate Bangladesh</h3>
+            </a>
           </div>
-          
-          <!--navbar right-->
-          <div class="font-medium text-xl text-paraClr">
-           <span><img src="assets/images/coin.png" alt=""></span>
-           <h5 class="pl-2 pr-1">5500</h5>
-           <h4>BDT</h4>
+        
+          <div class="right">
+            <span class="sm:text-xl text-base font-medium text-paraClr flex">
+              <img src="assets/images/coin.png" alt="">
+              <h3 class="sm:ml-2 ml-0 mr-1" id="my-amount">10000.00</h3>
+              <span>BDT</span>
+            </span>
           </div>
         </div>
+       </div>
+       <!-- navbar button section markup -->
+        <div class="mt-10 flex justify-center gap-4">
+          <button class="btn text-xl font-semibold text-headingClr hover:bg-btnBack bg-btnBack" id="btn1">Donation</button>
+          <button  class="btn text-xl font-semibold text-paraClr hover:bg-btnBack" id="btn2">History</button>
+        </div>
+     </header>
+        <!-- main section markup -->
+      <main class="main-section">
+      <!-- donation section markup -->
+        <section id="page1">
+        <!-- donate noakhali -->
+         <div class="grid sm:grid-cols-2 grid-cols-1 gap-5 w-10/12 mx-auto my-10">
+          <!-- donatoion left content -->
+          <div class="left-content">
+            <img src="assets/images/noakhali.png" alt="">
+          </div>
+          <!-- donation right content -->
+          <div class="right-content">
+            <!-- donated amount part -->
+           <div class="amount-btn">
+            <button class="btn text-base font-medium text-paraClr ">
+              <img src="assets/images/coin.png" alt="">
+              <h3 id="donated-amount">200</h3>
+              <span>BDT</span>
+            </button>
+           </div>
+           <!-- donation title part -->
+            <div class="donate-title mt-7 mb-6">
+              <h3 class="text-xl font-bold text-headingClr">Donate for Flood at Noakhali, Bangladesh</h3>
+            </div>
+            <!-- dontation describtion part -->
+            <div class="donate-decribtion">
+              <p class="text-base font-light text-paraClr"> The recent floods in Noakhali have caused significant damage to homes  infrastructure. Your donation will help provide essential supplies and  to those affected by this disaster. Every contribution, big or small, makes  difference. Please join us in supporting the relief efforts and making a positive impact on the lives of those in need.</p>
+            </div>
+            <!-- donation input part -->
+             <div class=" text-lg font-semibold text-headingClr">
+              <input placeholder="write your donation" class="w-full text-base font-light text-paraClr p-3 border rounded-lg outline-none my-5" id="donate-input">
+             </div>
+             <!-- donation btn -->
+              <button class="text-xl font-bold text-headingClr w-full bg-btnBack rounded-xl btn hover:bg-btnBack" id="donate-button">Donate Now</button>
+          </div>
+         </div>
+      </section>
+      <!-- second page markup -->
+      <div id="page2" class="hidden">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus, natus?</p>
       </div>
-      <!-- donation button section markup -->
-       <div class="dontion-buttons flex justify-center items-center gap-10">
-        <button class="btn font-semibold text-xl text-headingClr cursor-pointer hover:bg-btnBack" id="btn1">Donation</button>
-        <button class="btn font-medium text-xl px-4 text-paraClr cursor-pointer hover:bg-btnBack" id="btn2">History</button>
-       </div>
-      
-    </header>
-    <!-- main section markup -->
-    <main class="main-section">  
-      <!-- donate noakhali  -->
-       <div class="donate-noakhali border border-gray-100 w-10/12 mx-auto my-9 p-5  grid-cols-2 gap-6 rounded-lg sec grid" id="page1">
-        <!-- donate left-content -->
-       <div class="donate-left-content"><img src="assets/images/noakhali.png" alt=""></div>
-       <!-- donate-right-content -->
-       <div class="donate-right-content">
-        <!-- donation amount -->
-         <button class="btn" ><img src="assets/images/coin.png" alt=""><div class="font-medium text-paraClr text-base"><span>100</span>
-          <h3 class="inline-block">BDT</h3></div></button>
-         <!-- donation title -->
-          <h3 class="font-semibold text-xl my-4">Donate for Flood at Noakhali, Bangladesh</h3>
-          <!-- donation describtion -->
-           <p class="font-light text-base text-paraClr"> The recent floods in Noakhali have caused significant damage to homes  infrastructure. Your donation will help provide essential supplies and  to those affected by this disaster. Every contribution, big or small, makes  difference. Please join us in supporting the relief efforts and making a positive impact on the lives of those in need.</p>
-           <!-- write your donation -->
-            <input type="text" placeholder="Write Your Donation" class="border w-full p-3 text-base font-light text-paraClr rounded-lg outline-none mt-7 mb-3">
-            <!-- donation button -->
-             <button class="btn w-full bg-btnBack font-semibold text-lg mt-5 text-headingClr hover:bg-btnBack">Donation Now</button>
-       </div>
-       </div>
-       <div id="page2" class="hidden">
-        <h3>hrllo world</h3>
-       </div>
     </main>
-
-  
-
 
     <!-- https://github.com/HridoyMnd/my-assignment-5 -->
      <!-- https://hridoymnd.github.io/my-assignment-5/ -->
