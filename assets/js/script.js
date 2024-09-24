@@ -60,6 +60,20 @@ tailwind.config = {
           const modal = document.getElementById('modal');
           modal.classList.toggle('hidden');
           modal.classList.toggle('flex');
+          
+          const historyContainer = document.getElementById('history-container');
+          const newHistory = document.createElement('div');
+          const h3 = document.createElement('h3');
+          h3.className = 'text-xl font-bold mb-3';
+          h3.innerText = donateValue + ' Taka is donated for noakhali';
+          const p = document.createElement('p');
+
+          const getDate = new Date();
+          p.innerText = 'Date: ' + getDate;
+          newHistory.className = 'border text-black p-4 rounded-lg mb-4';
+          historyContainer.appendChild(newHistory);
+          newHistory.appendChild(h3);
+          newHistory.appendChild(p);
       }
       donateInput.value = '';
    
@@ -70,7 +84,4 @@ tailwind.config = {
     modal.classList.toggle('hidden');
     modal.classList.toggle('flex');
   })
-    // Function to show and hide the modal
-    // function toggleModal() {
 
-    // }
