@@ -47,16 +47,30 @@ tailwind.config = {
       //donation input value
       const donateInput = document.getElementById('donate-input');
       const donateValue = parseFloat(donateInput.value);
+      // const isValidNumber = /^-?\d*(\.\d+)?$/.test(donateValue);
+      // const donateValue = padonateInput.value.trim();
 
-      if (donateInput === "" || isNaN(donateValue) || donateValue < 0) {
+      if (donateInput.value === "" || isNaN(donateValue) || donateValue < 0 ) {
           alert('Invalid donation');
       } else {
           myIntAmount -= donateValue; 
           myAmountElement.innerText = myIntAmount.toFixed(2);
           donatedIntAmount += donateValue;
-          donatedAmount.innerText = donatedIntAmount;
+          donatedAmount.innerText = donatedIntAmount.toFixed(2);
+          const modal = document.getElementById('modal');
+          modal.classList.toggle('hidden');
+          modal.classList.toggle('flex');
       }
       donateInput.value = '';
    
   })
-  
+  const confirmBtn = document.getElementById('confirm-btn');
+  confirmBtn.addEventListener('click', function(){
+    const modal = document.getElementById('modal');
+    modal.classList.toggle('hidden');
+    modal.classList.toggle('flex');
+  })
+    // Function to show and hide the modal
+    // function toggleModal() {
+
+    // }
