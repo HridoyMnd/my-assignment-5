@@ -35,7 +35,7 @@
     <header class="header-section">
       <!-- navbar section -->
       <div class="navbar-container bg-amber-50 pt-3 pb-10 mb-20">
-        <div class="navbar flex justify-between w-4/5 mx-auto">
+        <div class="navbar flex justify-between w-10/12 mx-auto">
           <!-- navbar start -->
           <div class="">
             <button class=" btn bg-btnBack font-semibold text-xl px-8 hover:bg-btnBack">Blog</button>
@@ -56,25 +56,46 @@
         </div>
       </div>
       <!-- donation button section markup -->
-       <div class="dontion-buttons flex justify-center gap-5">
-        <button class="btn bg-btnBack font-semibold text-xl hover:bg-btnBack text-headingClr"><a href="" class="px-4">Donation</a></button>
-        <button class="btn bg-inherit font-medium text-xl px-4 text-paraClr"><a href="">History</a></button>
+       <div class="dontion-buttons flex justify-center items-center gap-10">
+        <button class="btn font-semibold text-xl text-headingClr cursor-pointer hover:bg-btnBack" id="btn1">Donation</button>
+        <button class="btn font-medium text-xl px-4 text-paraClr cursor-pointer hover:bg-btnBack" id="btn2">History</button>
        </div>
       
     </header>
     <!-- main section markup -->
-     <main class="main-section">
-
-     </main>
-    
+    <main class="main-section">  
+      <!-- donate noakhali  -->
+       <div class="donate-noakhali border border-gray-100 w-10/12 mx-auto my-9 p-5  grid-cols-2 gap-6 rounded-lg sec grid" id="page1">
+        <!-- donate left-content -->
+       <div class="donate-left-content"><img src="assets/images/noakhali.png" alt=""></div>
+       <!-- donate-right-content -->
+       <div class="donate-right-content">
+        <!-- donation amount -->
+         <button class="btn" ><img src="assets/images/coin.png" alt=""><div class="font-medium text-paraClr text-base"><span>100</span>
+          <h3 class="inline-block">BDT</h3></div></button>
+         <!-- donation title -->
+          <h3 class="font-semibold text-xl my-4">Donate for Flood at Noakhali, Bangladesh</h3>
+          <!-- donation describtion -->
+           <p class="font-light text-base text-paraClr"> The recent floods in Noakhali have caused significant damage to homes  infrastructure. Your donation will help provide essential supplies and  to those affected by this disaster. Every contribution, big or small, makes  difference. Please join us in supporting the relief efforts and making a positive impact on the lives of those in need.</p>
+           <!-- write your donation -->
+            <input type="text" placeholder="Write Your Donation" class="border w-full p-3 text-base font-light text-paraClr rounded-lg outline-none mt-7 mb-3">
+            <!-- donation button -->
+             <button class="btn w-full bg-btnBack font-semibold text-lg mt-5 text-headingClr hover:bg-btnBack">Donation Now</button>
+       </div>
+       </div>
+       <div id="page2" class="hidden">
+        <h3>hrllo world</h3>
+       </div>
+    </main>
 
   
-    
-     
+
 
     <!-- https://github.com/HridoyMnd/my-assignment-5 -->
      <!-- https://hridoymnd.github.io/my-assignment-5/ -->
-      <button class="btn bg-btnBack"><a href="https://github.com/HridoyMnd/my-assignment-5">git link</a></button>
-      <button class="btn bg-btnBack"><a href="https://hridoymnd.github.io/my-assignment-5/"> live server</a></button>
+      <!-- <button class="btn bg-btnBack"><a href="https://github.com/HridoyMnd/my-assignment-5">git link</a></button> -->
+      <!-- <button class="btn bg-btnBack"><a href="https://hridoymnd.github.io/my-assignment-5/"> live server</a></button> -->
+    <script src="assets/js/script.js"></script>
+
 </body>
 </html>
