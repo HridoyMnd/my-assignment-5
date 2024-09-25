@@ -15,24 +15,35 @@ tailwind.config = {
   }
 }
 
-  //showpages and active buttons
-  const button1 = document.getElementById('btn1');
-  const button2 = document.getElementById('btn2');
-  const pageOne = document.getElementById('page1');
-  const pagetwo = document.getElementById('page2');
-  //pages show controls with function
-  button1.addEventListener('click', function(){
-      pageOne.classList.remove('hidden');
-      pagetwo.classList.add('hidden');
-      button1.classList.add('bg-btnBack');
-      button2.classList.remove('bg-btnBack');
-  })
-  button2.addEventListener('click', function(){
-      pagetwo.classList.remove('hidden');
-      pageOne.classList.add('hidden');
-      button2.classList.add('bg-btnBack');
-      button1.classList.remove('bg-btnBack');
-  })
+  //get both pages
+const pageOne = document.getElementById('page1');
+const pageTwo = document.getElementById('page2');
+//get both buttons
+const activeButton = document.getElementById('btn1');
+const disableButton = document.getElementById('btn2');
+activeButton.addEventListener('click', function(){
+pageTwo.classList.add('hidden');
+pageOne.classList.remove('hidden');
+})
+disableButton.addEventListener('click', function(){
+pageOne.classList.add('hidden');
+pageTwo.classList.remove('hidden');
+})
+
+function showPages(activBtn, disableBtn) {
+  // Get both buttons
+  const activeButton = document.getElementById(activBtn);
+  const disableButton = document.getElementById(disableBtn);
+
+
+  // Activate the clicked button
+  activeButton.classList.add('bg-btnBack', 'text-headingClr');
+  activeButton.classList.remove('bg-gray-200', 'text-paraClr');
+  // Deactivate the other button
+  disableButton.classList.remove('bg-btnBack', 'text-headingClr');
+  disableButton.classList.add('bg-gray-200', 'text-paraClr');
+}
+
   //decrease from my avaiable amount
   let myAmountElement = document.getElementById('my-amount');
   let myIntAmount = parseFloat(myAmountElement.innerText);    
@@ -41,14 +52,13 @@ tailwind.config = {
   //donated total amount
   let donatedAmount = document.getElementById('donated-amount')
   let donatedIntAmount = parseFloat(donatedAmount.innerText);
-
+  //donate title noakhali 
+  const donateTitleNoakhali = document.getElementById('donate-title-noakhali').innerText;
   // amount increase and decrease with function
   donateBtn.addEventListener('click', function(){
       //donation input value
       const donateInput = document.getElementById('donate-input');
       const donateValue = parseFloat(donateInput.value);
-      // const isValidNumber = /^-?\d*(\.\d+)?$/.test(donateValue);
-      // const donateValue = padonateInput.value.trim();
 
       if (donateInput.value === "" || isNaN(donateValue) || donateValue < 0 ) {
           alert('Invalid donation');
@@ -64,10 +74,10 @@ tailwind.config = {
           const historyContainer = document.getElementById('history-container');
           const newHistory = document.createElement('div');
           const h3 = document.createElement('h3');
-          h3.className = 'text-xl font-bold mb-3';
-          h3.innerText = donateValue + ' Taka is donated for noakhali';
+          h3.className = 'sm:text-xl text-base font-bold mb-3';
+          h3.innerText = donateValue + ' Taka is donated for ' + donateTitleNoakhali;
           const p = document.createElement('p');
-
+          p.className = 'sm:text-base text-sm'
           const getDate = new Date();
           p.innerText = 'Date: ' + getDate;
           newHistory.className = 'border text-black p-4 rounded-lg mb-4';
