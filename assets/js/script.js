@@ -49,12 +49,55 @@ function showPages(activBtn, disableBtn) {
   let myIntAmount = parseFloat(myAmountElement.innerText);    
   //control with donation button
   const donateBtn = document.getElementById('donate-button');
+  //donate button feni
+  const donateBtnFeni = document.getElementById('donate-button-feni');
+
   //donated total amount
   let donatedAmount = document.getElementById('donated-amount')
   let donatedIntAmount = parseFloat(donatedAmount.innerText);
+  //donated amount fon feni
+  let donatedAmountFeni = document.getElementById('donated-amount-feni')
+  let donatedIntAmountFeni = parseFloat(donatedAmountFeni.innerText);
   //donate title noakhali 
   const donateTitleNoakhali = document.getElementById('donate-title-noakhali').innerText;
+  //donated title feni
+  const donateTitleFeni = document.getElementById('donate-title-feni').innerText;
   // amount increase and decrease with function
+
+  //donate increase and amount decrease for feni
+  donateBtnFeni.addEventListener('click', function(){
+      //donation input value
+      const donateInputFeni = document.getElementById('donate-input-feni');
+      const donateValue = parseFloat(donateInputFeni.value);
+
+      if (donateInputFeni.value === "" || isNaN(donateValue) || donateValue < 0 ) {
+          alert('Invalid donation');
+      } else {
+          myIntAmount -= donateValue; 
+          myAmountElement.innerText = myIntAmount.toFixed(2);
+          donatedIntAmountFeni += donateValue;
+          donatedAmountFeni.innerText = donatedIntAmountFeni.toFixed(2);
+          const modal = document.getElementById('modal');
+          modal.classList.toggle('hidden');
+          modal.classList.toggle('flex');
+          
+          const historyContainer = document.getElementById('history-container');
+          const newHistory = document.createElement('div');
+          const h3 = document.createElement('h3');
+          h3.className = 'sm:text-xl text-base font-bold mb-3';
+          h3.innerText = donateValue + ' Taka is donated for ' + donateTitleFeni;
+          const p = document.createElement('p');
+          p.className = 'sm:text-base text-sm'
+          const getDate = new Date();
+          p.innerText = 'Date: ' + getDate;
+          newHistory.className = 'border text-black p-4 rounded-lg mb-4';
+          historyContainer.appendChild(newHistory);
+          newHistory.appendChild(h3);
+          newHistory.appendChild(p);
+      }
+      donateInputFeni.value = '';
+   
+  })
   donateBtn.addEventListener('click', function(){
       //donation input value
       const donateInput = document.getElementById('donate-input');
