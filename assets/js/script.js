@@ -51,6 +51,8 @@ function showPages(activBtn, disableBtn) {
   const donateBtn = document.getElementById('donate-button');
   //donate button feni
   const donateBtnFeni = document.getElementById('donate-button-feni');
+  //donate button quata
+  const donateBtnQuata = document.getElementById('donate-button-quata');
 
   //donated total amount
   let donatedAmount = document.getElementById('donated-amount')
@@ -58,10 +60,15 @@ function showPages(activBtn, disableBtn) {
   //donated amount fon feni
   let donatedAmountFeni = document.getElementById('donated-amount-feni')
   let donatedIntAmountFeni = parseFloat(donatedAmountFeni.innerText);
+  //donated amount fon quata
+  let donatedAmountQuata = document.getElementById('donated-amount-quata')
+  let donatedIntAmountQuata = parseFloat(donatedAmountQuata.innerText);
   //donate title noakhali 
   const donateTitleNoakhali = document.getElementById('donate-title-noakhali').innerText;
   //donated title feni
   const donateTitleFeni = document.getElementById('donate-title-feni').innerText;
+  //donated title quata
+  const donateTitleQuata = document.getElementById('donate-title-quata').innerText;
   // amount increase and decrease with function
 
   //donate increase and amount decrease for feni
@@ -96,6 +103,40 @@ function showPages(activBtn, disableBtn) {
           newHistory.appendChild(p);
       }
       donateInputFeni.value = '';
+   
+  })
+  //donate increase and amount decrease for quata
+  donateBtnQuata.addEventListener('click', function(){
+      //donation input value
+      const donateInputQuata = document.getElementById('donate-input-quata');
+      const donateValue = parseFloat(donateInputQuata.value);
+
+      if (donateInputQuata.value === "" || isNaN(donateValue) || donateValue < 0 ) {
+          alert('Invalid donation');
+      } else {
+          myIntAmount -= donateValue; 
+          myAmountElement.innerText = myIntAmount.toFixed(2);
+          donatedIntAmountQuata += donateValue;
+          donatedAmountQuata.innerText = donatedIntAmountQuata.toFixed(2);
+          const modal = document.getElementById('modal');
+          modal.classList.toggle('hidden');
+          modal.classList.toggle('flex');
+          
+          const historyContainer = document.getElementById('history-container');
+          const newHistory = document.createElement('div');
+          const h3 = document.createElement('h3');
+          h3.className = 'sm:text-xl text-base font-bold mb-3';
+          h3.innerText = donateValue + ' Taka is donated for ' + donateTitleQuata;
+          const p = document.createElement('p');
+          p.className = 'sm:text-base text-sm'
+          const getDate = new Date();
+          p.innerText = 'Date: ' + getDate;
+          newHistory.className = 'border text-black p-4 rounded-lg mb-4';
+          historyContainer.appendChild(newHistory);
+          newHistory.appendChild(h3);
+          newHistory.appendChild(p);
+      }
+      donateInputQuata.value = '';
    
   })
   donateBtn.addEventListener('click', function(){
